@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
-import 'result.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         canvasColor: Colors.black,
+        iconTheme: const IconThemeData(color: Colors.white,size: 90),
               textTheme: const TextTheme(
 headline2:  TextStyle(
                 fontSize: 25,
@@ -25,10 +26,7 @@ headline2:  TextStyle(
               ),
 
       
-      home:   const Result(
-        age: 22,
-       isMale: true,
-        result: 50),
+      home:   const MyHomePage()
     );
   }
 }
