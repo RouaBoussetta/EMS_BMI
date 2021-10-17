@@ -20,12 +20,14 @@ class MyApp extends StatelessWidget {
                     fontSize: 45,
                     fontWeight: FontWeight.w800,
                     color: Colors.white),
-                      headline2: TextStyle(
+                headline2: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black)
-                    )
-                    ),
+                    color: Colors.black),
+                bodyText1: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black))),
         home: const MyHomePage());
   }
 }
