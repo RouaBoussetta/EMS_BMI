@@ -25,11 +25,14 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
+        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
               child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+
                 children: [
                   m1Expanded(context, 'male'),
                   const SizedBox(
@@ -41,38 +44,42 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Expanded(
                 child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 3.0),
               child: Container(
-
-                        decoration: BoxDecoration(
-            color: Colors.blueGrey, borderRadius: BorderRadius.circular(10)),
-                child: Column(
-                children: [
-                  Text('Height', style: Theme.of(context).textTheme.headline2),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                  decoration: BoxDecoration(
+                      color: Colors.blueGrey,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(heightVal.toStringAsFixed(1),
-                          style: Theme.of(context).textTheme.headline1),
-                      Text('cm', style: Theme.of(context).textTheme.bodyText1),
+                      Text('Height',
+                          style: Theme.of(context).textTheme.headline2),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.baseline,
+                        textBaseline: TextBaseline.alphabetic,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(heightVal.toStringAsFixed(1),
+                              style: Theme.of(context).textTheme.headline1),
+                          Text('cm',
+                              style: Theme.of(context).textTheme.bodyText1),
+                        ],
+                      ),
+                      Slider(
+                          min: 90,
+                          max: 220,
+                          value: heightVal,
+                          onChanged: (newValue) {
+                            setState(() {
+                              heightVal = newValue;
+                            });
+                          })
                     ],
-                  ),
-                  Slider(
-                      min: 90,
-                      max: 220,
-                      value: heightVal,
-                      onChanged: (newValue) {
-
-                        setState(() {
-                          heightVal=newValue;
-                        });
-                      })
-                ],
-              )),
+                  )),
             )),
             Expanded(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   m2Expanded(context, 'weight'),
                   const SizedBox(
